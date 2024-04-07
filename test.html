@@ -55,8 +55,8 @@
         element: document.body,
         engine: engine,
         options: {
-          width: 400,
-          height: 700,
+          width: 375,
+          height: 800,
           wireframes: false,
           hasBounds: true,
         },
@@ -107,7 +107,7 @@
         //// create box
         // Tạo hình chữ nhật dẹp giống cái dĩa
         let dishWidth = 120; // Chiều rộng của hình chữ nhật
-        let dishHeight = 25; // Chiều cao của hình chữ nhật
+        let dishHeight = 20; // Chiều cao của hình chữ nhật
         let cornerRadius = 6; // Bán kính bo tròn các góc
 
         let boxCurrent = Bodies.rectangle(
@@ -119,6 +119,10 @@
             chamfer: { radius: cornerRadius },
           }
         );
+
+        // Đặt màu sắc của hình chữ nhật
+        boxCurrent.render.fillStyle = "#brown"; // Thay đổi màu sắc tùy theo mong muốn của bạn
+
         boxCurrent.render.fillStyle = "#ffffff";
         boxCurrent.frictionAir = 0;
         boxCurrent.restitution = 0;
@@ -134,7 +138,7 @@
             isStatic: true,
           }
         );
-        hangPointCurrent.render.fillStyle = "#ff050500";
+        hangPointCurrent.render.fillStyle = "#ffffff";
         hangPoint.push(hangPointCurrent);
 
         /////create constraint
@@ -207,7 +211,7 @@
           gameOver();
         } else {
           if (secondDisplay.textContent > 0) {
-            timeOutID = setTimeout(createBlock, 1500); //// if collistioin Ends
+            timeOutID = setTimeout(createBlock, 2000); //// if collistioin Ends
           }
         }
       });
